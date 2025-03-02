@@ -1,28 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Button, TextField, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const SignUp: React.FC = () => {
+    const [form, setForm] = useState({ username: '', email: '', password: '' });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = () => {
+        console.log('Cadastro:', form);
+    };
+
     return (
+        <>
         <Box
+            component="form"
             display="flex"
             flexDirection="column"
             alignItems="center"
             justifyContent="center"
-            
-            
-            
-           
         >
             <Typography variant="h4" gutterBottom>
-                Sign Up
+                Cadastre-se
             </Typography>
-            <TextField label="Username" variant="outlined" margin="normal" fullWidth />
-            <TextField label="Email" variant="outlined" margin="normal" fullWidth />
-            <TextField label="Password" type="password" variant="outlined" margin="normal" fullWidth />
-            <Button variant="contained" color="primary" fullWidth onClick={() => alert('Teste')}>
-                Sign Up
+            <TextField name="username" label="Username" variant="outlined" margin="normal" fullWidth onChange={handleChange} />
+            <TextField name="email" label="Email" variant="outlined" margin="normal" fullWidth onChange={handleChange} />
+            <TextField name="password" label="Password" type="password" variant="outlined" margin="normal" fullWidth onChange={handleChange} />
+            <Button variant="contained" color="primary" fullWidth onClick={handleSubmit}>
+                Cadastrar
             </Button>
+            <Typography variant="body2" gutterBottom>
+                Já tem uma conta? <Link to="/signin">Entrar</Link>
+            </Typography>
         </Box>
+        
+        </>
     );
 };
 

@@ -1,19 +1,14 @@
 
 
 
-import SignUp from './pages/signUp'
-import './App.css'
+import React from 'react';
+import AppRoutes from './routes/routes';
+import './App.css';
 
-function App() {
-  
+const App: React.FC = () => {
+    return (
+        <AppRoutes />
+    );
+};
 
-  return (
-    <>
-      
-      < SignUp />
-      
-    </>
-  )
-}
-
-export default App
+export default App;
