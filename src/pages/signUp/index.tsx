@@ -19,7 +19,7 @@ const SignUp: React.FC = () => {
             <TextField label="Username" variant="outlined" margin="normal" fullWidth />
             <TextField label="Email" variant="outlined" margin="normal" fullWidth />
             <TextField label="Password" type="password" variant="outlined" margin="normal" fullWidth />
-            <Button variant="contained" color="primary" fullWidth>
+            <Button variant="contained" color="primary" fullWidth onClick={() => alert('Teste')}>
                 Sign Up
             </Button>
         </Box>
