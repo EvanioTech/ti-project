@@ -1,11 +1,53 @@
 import React from 'react';
+import { useState } from 'react';
+import { Box, Button, TextField } from '@mui/material';
+import { Link } from 'react-router-dom';
+import './home.css';
+
+
 
 
 const Home: React.FC = () => {
+
+    const [username, setUsername] = useState('Matias');
+    const [hours, setHours] = useState(0);
+    const [minutes, setMinutes] = useState(0);
+
     return (
-        <div>
-            <h1>Welcome to the Home Page</h1>
-        </div>
+        <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+            height="100vh"
+            width="100vw"
+            bgcolor="background.default"
+            
+        >
+            <h1>Ola {username}</h1>
+            <Box
+            flexDirection='row'
+            >
+                <h1>Informe sua Saída:</h1>
+            <TextField label="Horas"
+             variant="filled"
+              type="number"
+               margin="normal" 
+               onChange={(e) => setHours(Number(e.target.value))} />
+            <TextField label="Minutos"
+             type="number"
+              variant="filled"
+               margin="normal"
+               onChange={(e) => setMinutes(Number(e.target.value))}  />
+            </Box>
+            <h1>Horas: {hours}</h1>
+            <h1>Minutos: {minutes}</h1>
+            <Link className='textButton' to="/signIn">
+                <Button variant="contained" color='primary' fullWidth>
+                    Sign In
+                </Button>
+            </Link>
+        </Box>
     );
 };
 

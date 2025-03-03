@@ -19,12 +19,10 @@ const SignIp: React.FC = () => {
             <TextField label="Username" variant="outlined" margin="normal" fullWidth />
             
             <TextField label="Password" type="password" variant="outlined" margin="normal" fullWidth />
-            <Link className='textButton' to="/Home">
-            
-            <Button variant="contained" color='primary'  fullWidth  >
+            <Link className='buttonEntrar' to="/Home">
+            <Button variant="contained"   fullWidth color="secondary" >
                 Entrar
             </Button>
-            
             </Link>
            
         </Box>
