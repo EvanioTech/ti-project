@@ -42,7 +42,7 @@ const Home: React.FC = () => {
             </Box>
             <h1>Horas Extras do dia: </h1>
             
-            <Link className='textButton' to="/signIn">
+            <Link className='textButton' to="/bank">
                 <Button variant="contained" color='primary' fullWidth>
                     Salvar
                 </Button>
