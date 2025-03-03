@@ -20,7 +20,7 @@ const Home: React.FC = () => {
             alignItems="center"
             justifyContent="center"
             height="100vh"
-            width="100vw"
+            width="95vw"
             bgcolor="background.default"
             
         >
@@ -40,11 +40,11 @@ const Home: React.FC = () => {
                margin="normal"
                onChange={(e) => setMinutes(Number(e.target.value))}  />
             </Box>
-            <h1>Horas: {hours}</h1>
-            <h1>Minutos: {minutes}</h1>
+            <h1>Horas Extras do dia: </h1>
+            
             <Link className='textButton' to="/signIn">
                 <Button variant="contained" color='primary' fullWidth>
-                    Sign In
+                    Salvar
                 </Button>
             </Link>
         </Box>
